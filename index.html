@@ -5,15 +5,15 @@
           xmlns:th="http://www.thymeleaf.org"
           xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
     <title>Aulas</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="container-cabecalho">
     <h3>Minhas Aulas</h3>
 </header>
 <nav class="container-nav">
-    <div class="btn-nav">NOVA</div>
-    <div class="btn-nav">RESET</div>
+    <div class="btn-nav" onclick="novaAula()">NOVA</div>
+    <div class="btn-nav" onclick="reset()">RESET</div>
 </nav>
 
 <div class="container-geral">
@@ -30,14 +30,14 @@
             </div>
             <div class="container-btns">
                 <div></div>
-                <div class="btn">EDITAR</div>
-                <div class="btn">REMOVER</div>
+                <div class="btn" th:attr="id=${aula.id}" th:onclick="editarAula(this.getAttribute('id'))">EDITAR</div>
+                <div class="btn" th:attr="id=${aula.id}" th:onclick="deleta(this.getAttribute('id'))">REMOVER</div>
             </div>
         </div>
     </div>
 </div>
 
-<script src="/script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
